@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>リーダーボード（片手モード）</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaderboard.css') }}">
+</head>
+<body>
+    <h1>リーダーボード（片手モード）</h1>
+    <p>ここでは、片手モードでの最高スコアを確認できます。あなたのスコアを更新して、トップを目指しましょう！</p>
+    <table>
+        <thead>
+            <tr>
+                <th>順位</th>
+                <th>名前</th>
+                <th>スコア</th>
+                <th>日時</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if leaderboard %}
+            {% for entry in leaderboard %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ entry.username }}</td>
+                    <td>{{ entry.score }}</td>
+                    <td>{{ entry.date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">まだスコアが登録されていません。</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+    <a href="/" class="button">ホームに戻る</a>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* コンテナのスタイル */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ロゴのスタイル */
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* 見出しのスタイル */
+h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* ゲーム概要のスタイル */
+p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* メニューのスタイル */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu a:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* アイコンとテキストの間にスペースを追加 */
+.menu a i {
+    margin-right: 10px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 10px;
+    }
+    
+    .logo {
+        width: 100px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .menu a {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+}

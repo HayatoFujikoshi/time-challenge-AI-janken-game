@@ -1,0 +1,240 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #eef2f3;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow: scroll; /* スクロールを有効化 */
+}
+
+/* ヘッダーと見出し */
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+/* 準備中メッセージ */
+#preparation-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#tips {
+    margin-top: 2px;
+    text-align: center;
+}
+
+#tips img {
+    width: 80%; /* 画像の幅を調整 */
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* カウントダウン表示 */
+#countdown {
+    font-size: 2.5em;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+/* ゲームと結果表示のスタイル */
+#game, #result {
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* ゲームセクションの非表示 */
+#game, #result {
+    display: none;
+}
+
+/* タイマーとスコア */
+#timer, #score {
+    font-size: 1.2em;
+    color: #34495e;
+    margin: 10px 0;
+}
+
+/* コマンド */
+#command {
+    font-size: 1.1em;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+/* ゲームのレイアウト */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .game-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* 各ハンドセクションのスタイル */
+.hand-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.hand-section img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hand-section img:hover {
+    transform: scale(1.1);
+}
+
+#video {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: scaleX(-1);
+}
+
+/* ユーザーの手の表示 */
+#user-hand {
+    font-size: 1.1em;
+    color: #34495e;
+    margin-top: 10px;
+}
+
+/* スコア表示のスタイル */
+#timer,#score {
+    font-size: 2em; /* 大きめのフォントサイズで視認性を向上 */
+    color: #ffffff;
+    background-color: #3498db; /* 青色の背景 */
+    /* padding: 10px 20px; 周囲に余白を追加 */
+    border-radius: 8px; /* 角を丸める */
+    font-weight: bold; /* 太字で強調 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 軽い影で浮かせる */
+    margin: 10px 0;
+    text-align: center;
+    width: fit-content; /* 必要な分だけ幅を取る */
+}
+
+/* スコアホバースタイル（視覚効果） */
+#score:hover {
+    background-color: #2980b9; /* ホバー時に濃い青色に変化 */
+    transform: scale(1.05); /* 少し大きくする */
+    transition: all 0.3s ease; /* スムーズなトランジション */
+}
+
+/* 結果表示のスタイル */
+#result {
+    text-align: center;
+    background-color: #f7f9fc;
+    border: 2px solid #3498db;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#final-score {
+    font-size: 2em;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 名前入力フォーム */
+#score-form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#score-form label {
+    font-size: 1em;
+    color: #34495e;
+}
+
+#score-form input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ボタンのデザイン */
+#score-form button, a.button {
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#score-form button:hover, a.button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* モバイル対応 */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #countdown {
+        font-size: 1.8em;
+    }
+
+    #timer, #score, #command, #user-hand {
+        font-size: 1em;
+    }
+
+    #final-score {
+        font-size: 1.5em;
+    }
+
+    a.button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    #score-form input[type="text"], #score-form button {
+        font-size: 0.9em;
+    }
+}
